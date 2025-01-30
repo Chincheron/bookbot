@@ -8,8 +8,9 @@ def word_count(string):
     words = string.split()
     #print(words)
     print(len(words))
+    return len(words)
 
-main()
+text = main()
 
-word_count(main())
+word_count(text)
 
