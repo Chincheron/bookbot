@@ -20,12 +20,21 @@ def character_count(string):
             character_counts[i] = character_counts[i] + 1
         else:
             character_counts[i] = 1
-    print(character_counts)
+    #print(character_counts)
+    return character_counts
+
+def print_report():
+    character_counts = character_count(text)
+    character_list = []
+    for i in character_counts:
+        if i.isalpha():
+            character_list.append(i)
+    alpha_counts = {}
+    for character in character_list:
+         alpha_counts[character] = character_counts[character]
+    print(alpha_counts)
 
 
 text = main()
 
-word_count(text)
-
-character_count(text)
-
+print_report()
