@@ -7,7 +7,7 @@ def main():
 def word_count(string):
     words = string.split()
     #print(words)
-    print(len(words))
+    return(len(words))
 
 def character_count(string):
     #convert to lower case for comparison
@@ -32,8 +32,17 @@ def print_report():
     alpha_counts = {}
     for character in character_list:
          alpha_counts[character] = character_counts[character]
-    print(alpha_counts)
-
+    alpha_counts = sorted(alpha_counts.items(), key=lambda x: x[1], reverse=True)
+    #print(alpha_counts)
+    
+    #print report output
+    print("--- Begin report of books/frankenstein.txt ---")
+    print(f"{word_count(text)} words found in the document\n")
+    
+    for letter, count in alpha_counts:
+        print(f"The letter '{letter}' occurs {count}  times.")
+    print ("--- End report ---")
+    
 
 text = main()
 
